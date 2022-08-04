@@ -22,7 +22,7 @@ pipeline {
 	   steps {
 	      withSonarQubeEnv('admin') {
 	         sh '${scannerHome}/bin/sonar-scanner \
-	           -D sonar.projectKey=python-app'	
+	           -D sonar.projectKey=CI-Docker'	
 	      }
            }
         }
@@ -37,7 +37,7 @@ pipeline {
                       "files" :[
                             {
                                "pattern": "coverage/",
-                               "target": "python-ci/"
+                               "target": "CI-Docker"
                             }
                        ]
                    }'''
