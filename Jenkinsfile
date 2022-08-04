@@ -26,9 +26,9 @@ pipeline {
 	      scannerHome = tool 'SonarQube Scanner'
 	   }
 	   steps {
-	      withSonarQubeEnv('admin') {
+	      withSonarQubeEnv('Sonar') {
 	         sh '${scannerHome}/bin/sonar-scanner \
-	           -D sonar.projectKey=CI-Docker'	
+	         -D sonar.projectKey=CI-Docker'	
 	      }
            }
         }
@@ -43,7 +43,7 @@ pipeline {
                       "files" :[
                             {
                                "pattern": "coverage/",
-                               "target": "CI-Docker"
+                               "target": "CI-Docker/"
                             }
                        ]
                    }'''
