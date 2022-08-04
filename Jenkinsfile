@@ -38,7 +38,7 @@ pipeline {
     	   }
            steps {
                rtUpload (
-                   serverId: 'JFrog',
+                   serverId: 'admin',
                    spec: '''{
                       "files" :[
                             {
